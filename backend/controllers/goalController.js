@@ -3,7 +3,10 @@
 // @route GET /api/goals
 // @access Private
 const getGoals = (req,res) =>{
-    res.status(200).json({ message: 'Get goals'})
+    if(!req.body.text){
+        res.status(400)
+        throw new Error("Please add text")
+    }
 }
 
 
