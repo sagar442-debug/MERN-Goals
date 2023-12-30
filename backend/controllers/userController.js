@@ -4,6 +4,7 @@ const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel.js')
 
 
+
 // @desc Register new user
 // @route POST /api/users
 // @access Public
@@ -78,7 +79,13 @@ const loginUser = asyncHandler(async (req,res) =>{
 // @route Get /api/users/me
 // @access Pivate
 const getMe = asyncHandler(async (req,res) =>{
-    res.json({message: 'User data display'})
+    const {_id, name, email} = await User.findById(req.user.id)
+
+    res.status(200).json({
+        id: _id,
+        name,
+        email
+    }) 
 })
 
 // Generate JWT 
