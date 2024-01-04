@@ -29,7 +29,7 @@ const getGoals = async (token) =>{
 }
 
 // Delete user goal
-const deletGoal = async (goalId, token) =>{
+const deleteGoal = async (goalId, token) =>{
     const config = {
         headers: {
             Authorization: `Bearer ${token}`
@@ -45,7 +45,7 @@ const deletGoal = async (goalId, token) =>{
 const goalService = {
     createGoal,
     getGoals,
-    deletGoal
+    deleteGoal
 }
 
 export default goalService;
