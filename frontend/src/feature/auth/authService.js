@@ -15,7 +15,12 @@ const register = async (userData) =>{
 
 // Logout user
 const logout = () => {
-    localStorage.removeItem('user')
+    try {
+        localStorage.removeItem('user');
+        // Additional cleanup or redirection logic if needed
+      } catch (error) {
+        console.error('Error during logout:', error);
+      }
   }
 
 // Login User
