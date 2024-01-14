@@ -19,7 +19,9 @@ function Dashboard() {
           console.log(message);
         }
 
-        if (!user) {
+        await user
+
+         if (!user) {
           navigate('/login');
         }
 
