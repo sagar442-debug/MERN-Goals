@@ -12,6 +12,9 @@ function Dashboard() {
   const { user } = useSelector((state) => state.auth);
   const { goals, isLoading, isError, message } = useSelector((state) => state.goals);
 
+  if (user==='' || user=== null) {
+    navigate('/login');
+  }
   
 
   useEffect(() => {
