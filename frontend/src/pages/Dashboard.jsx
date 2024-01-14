@@ -12,14 +12,16 @@ function Dashboard() {
   const { user } = useSelector((state) => state.auth);
   const { goals, isLoading, isError, message } = useSelector((state) => state.goals);
 
+  
+
   useEffect(() => {
     const fetchData = async () => {
+      await user
       try {
         if (isError) {
           console.log(message);
         }
 
-        await user
 
          if (!user) {
           navigate('/login');
