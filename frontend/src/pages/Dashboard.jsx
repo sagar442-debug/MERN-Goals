@@ -16,14 +16,14 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await user
       try {
+        await user
         if (isError) {
           console.log(message);
         }
 
 
-         if (!user) {
+         if (user==='' || user=== null) {
           navigate('/login');
         }
 
